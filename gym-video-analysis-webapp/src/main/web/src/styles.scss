@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+.row-custom {
+  margin-top: 1rem;
+}
+
+
+.delete-action {
+  box-sizing: border-box;
+  //color: #192038;
+  color: black;
+
+  :hover {
+    color: #ff3d71;
+    cursor: pointer;
+  }
+}
+
+.edit-action {
+  box-sizing: border-box;
+  //color: #192038;
+  color: black;
+
+  :hover {
+    color: #36f;
+    cursor: pointer;
+  }
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  border-top-color: #000000;
+  animation: spinner .8s linear infinite;
+}
+
+.spinner-background {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99999 !important;
+}
+
+.btn-margin-left {
+  margin-left: 1rem;
+}
+
+@media (max-width: 480px) {
+  .card-body-mobile-table {
+    padding: 0;
+  }
+}

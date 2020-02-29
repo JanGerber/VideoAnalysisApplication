@@ -1,0 +1,70 @@
+<div class="example-container">
+  <mat-toolbar color="primary">
+    <button
+      (click)="drawer.toggle()"
+      *ngIf="(isHandset$ | async)"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      type="button">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <button
+      (click)="toggleSmall()"
+      *ngIf="(isTablet$ | async)"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      type="button">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <span>Gymnastics Video Analysis Application</span>
+    <span class="w-100"></span>
+    <span class="float-right">
+      <button [matMenuTriggerFor]="menu" mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+        </span>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/login">
+        <mat-icon class="fa-2x" fontIcon="fa-sign-in-alt" fontSet="fa"></mat-icon>
+        <span>Login</span>
+      </button>
+      <button (click)="logout()" mat-menu-item>
+        <mat-icon class="fa-2x" fontIcon="fa-sign-out-alt" fontSet="fa"></mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+  <mat-sidenav-container [autosize]="(isTablet$ | async) && resize" class="sidenav-container">
+    <mat-sidenav #drawer [attr.role]="((isHandset$ | async) || (isTablet$ | async) )  ? 'dialog' : 'navigation'"
+                 [mode]="(isHandset$ | async) ? 'over' : 'side'"
+                 [ngClass]="{'sidnav-only-icon': smallIcon && (isTablet$ | async)}"
+                 [opened]="((isHandset$ | async) === false)"
+                 class="sidenav">
+      <!--      <mat-toolbar>Menü</mat-toolbar>-->
+      <mat-nav-list>
+        <div *ngFor="let item of menueItems" class="mat-nav-list-item">
+          <mat-list-item class="mat-list-item-custom">
+            <a [routerLinkActive]="'item-active'"
+               [routerLink]="item.link"
+               mat-list-item>
+              <mat-icon class="material-icons-outlined custom-nav-icon" matListIcon>{{item.icon}}</mat-icon>
+              <h3 *ngIf="!(isTablet$ | async) || !smallIcon" matLine>{{item.name}}</h3>
+            </a>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+
+
+    <mat-sidenav-content class="sidenav-content">
+      <div class="body-content">
+        <div class="container">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+      <app-footer class="footer-bottom"></app-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+

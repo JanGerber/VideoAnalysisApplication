@@ -1,0 +1,68 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 250px;
+}
+
+.sidnav-only-icon {
+  width: 64px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.body-content {
+  flex: 1 0 auto;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.sidenav-content {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100%;
+}
+
+.footer-bottom {
+  margin-top: 1rem;
+}
+
+.item-active {
+  background-color: #f8f9fa;
+}
+
+.mat-list-item-custom {
+  padding-left: 0 !important;
+
+  .mat-list-item-content {
+    color: green;
+  }
+}
+
+:host ::ng-deep .mat-list-item-content {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.custom-nav-icon {
+  margin-left: 16px;
+}
