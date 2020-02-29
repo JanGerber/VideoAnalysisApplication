@@ -20,7 +20,7 @@ export class AuthService {
   login(username: string, password: string) {
     return this.http.post<AuthResponse>('/api/v1/login', {username, password}).pipe(
       tap(res => {
-        this.setSession(res.jwt)
+        this.setSession(res.jwt);
         this.newLogin.emit(true);
         this.snackBar.open(`Sie wurden erfolgreich eingeloggt`,
           '',
@@ -31,7 +31,7 @@ export class AuthService {
         this.snackBar.open(`Sie konnten nicht eingelogt werden (${error.status}): ${error.message}`,
           '',
           {
-            panelClass: ['bg-warning','text-dark']
+            panelClass: ['bg-warning', 'text-dark']
           });
       }),
       shareReplay()

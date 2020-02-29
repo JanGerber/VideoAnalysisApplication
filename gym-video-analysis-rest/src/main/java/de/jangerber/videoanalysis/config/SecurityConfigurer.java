@@ -21,9 +21,11 @@ import org.springframework.security.web.util.matcher.RequestMatcher;
 @EnableWebSecurity
 public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
 
+    private static final RequestMatcher PROTECTED_URLS = new OrRequestMatcher(
+            new AntPathRequestMatcher("/api/**")
+    );
     @Autowired
     private MyUserDetailsService myUserDetailsService;
-
     @Autowired
     private JwtRequestFilter jwtRequestFilter;
 
@@ -44,10 +46,6 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
         authProvider.setPasswordEncoder(passwordEncoder());
         return authProvider;
     }
-
-    private static final RequestMatcher PROTECTED_URLS = new OrRequestMatcher(
-            new AntPathRequestMatcher("/api/**")
-    );
 
     @Override
     @Bean

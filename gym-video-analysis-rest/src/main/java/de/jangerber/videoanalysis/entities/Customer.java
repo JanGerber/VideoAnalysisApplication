@@ -1,6 +1,5 @@
 package de.jangerber.videoanalysis.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -22,8 +21,8 @@ public class Customer {
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "CUSTOMER_ROLES", joinColumns = {
-            @JoinColumn(name = "CUSTOMER_ID") }, inverseJoinColumns = {
-            @JoinColumn(name = "ROLE_ID") })
+            @JoinColumn(name = "CUSTOMER_ID")}, inverseJoinColumns = {
+            @JoinColumn(name = "ROLE_ID")})
     private List<Role> roles;
 
     public List<Role> getRoles() {

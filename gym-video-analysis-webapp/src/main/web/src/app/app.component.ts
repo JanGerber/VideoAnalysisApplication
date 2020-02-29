@@ -7,7 +7,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy{
+export class AppComponent implements OnInit, OnDestroy {
   title = 'cleaningplan-app';
   obsMessage: any;
 
@@ -16,6 +16,7 @@ export class AppComponent implements OnInit, OnDestroy{
     matIconRegistry.registerFontClassAlias('fa');
     matIconRegistry.registerFontClassAlias('far');
   }
+
   ngOnInit(): void {
   }
 

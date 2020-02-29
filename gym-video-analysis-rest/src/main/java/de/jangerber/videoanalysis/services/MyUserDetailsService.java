@@ -29,7 +29,7 @@ public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
         Customer customer = userRepo.findByUsername(userName);
-        if(customer == null){
+        if (customer == null) {
             throw new UsernameNotFoundException("Invalid username or password.");
         }
         return new org.springframework.security.core.userdetails.User(customer.getUsername(), customer.getPassword(), getAuthority(customer));

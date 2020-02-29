@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError, retry} from 'rxjs/operators';
 import {Device} from '../models/device';
@@ -32,7 +32,6 @@ export class DeviceApiService {
       .pipe(
         retry(1),
         catchError(err => this.handleError(err)),
-
       );
   }
 
@@ -42,7 +41,6 @@ export class DeviceApiService {
       .pipe(
         retry(1),
         catchError(err => this.handleError(err)),
-
       );
   }
 
@@ -52,7 +50,6 @@ export class DeviceApiService {
       .pipe(
         retry(1),
         catchError(err => this.handleError(err)),
-
       );
   }
 
@@ -62,7 +59,6 @@ export class DeviceApiService {
       .pipe(
         retry(1),
         catchError(err => this.handleError(err)),
-
       );
   }
 
@@ -82,14 +78,14 @@ export class DeviceApiService {
       this.snackBar.open(`Ein Fehler ist aufgetreten ${error.error.message}`,
         '',
         {
-          panelClass: ['bg-warning','text-dark']
+          panelClass: ['bg-warning', 'text-dark']
         });
     } else {
       // Get server-side error
       this.snackBar.open(`Ein Fehler ist aufgetreten (${error.status}): ${error.message}`,
         '',
         {
-          panelClass: ['bg-warning','text-dark']
+          panelClass: ['bg-warning', 'text-dark']
         });
     }
     return throwError(errorMessage);

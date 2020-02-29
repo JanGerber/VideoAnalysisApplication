@@ -19,36 +19,36 @@
 
           <!-- Employees list table, it hides when there is no employee -->
           <div *ngIf="devices.length !== 0">
-              <table class="table  table-responsive-sm table-striped table-sm">
-                <thead>
-                <tr>
-                  <th scope="col"></th>
-                  <th scope="col">Name</th>
-                  <th scope="col">IP address</th>
-                  <th scope="col">
-                    <button mat-icon-button routerLink="/device-create">
-                      <mat-icon color="primary">add_circle_outline</mat-icon>
-                    </button>
-                  </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr *ngFor="let item of devices">
-                  <td>
-                    <a (click)="deleteDevice(item.id)" class="delete-action">
-                      <mat-icon fontIcon="fa-trash-alt" fontSet="far"></mat-icon>
-                    </a>
-                  </td>
-                  <td>{{item.name}}</td>
-                  <td>{{item.ipAddress}}</td>
-                  <td>
-                    <a class="edit-action" routerLink="/device/{{item.id}}">
-                      <mat-icon fontIcon="fa-edit" fontSet="far"></mat-icon>
-                    </a>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
+            <table class="table  table-responsive-sm table-striped table-sm">
+              <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">IP address</th>
+                <th scope="col">
+                  <button mat-icon-button routerLink="/device-create">
+                    <mat-icon color="primary">add_circle_outline</mat-icon>
+                  </button>
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let item of devices">
+                <td>
+                  <a (click)="deleteDevice(item.id)" class="delete-action">
+                    <mat-icon fontIcon="fa-trash-alt" fontSet="far"></mat-icon>
+                  </a>
+                </td>
+                <td>{{item.name}}</td>
+                <td>{{item.ipAddress}}</td>
+                <td>
+                  <a class="edit-action" routerLink="/device/{{item.id}}">
+                    <mat-icon fontIcon="fa-edit" fontSet="far"></mat-icon>
+                  </a>
+                </td>
+              </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
