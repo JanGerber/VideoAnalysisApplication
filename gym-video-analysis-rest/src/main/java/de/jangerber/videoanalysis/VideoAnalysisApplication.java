@@ -1,10 +1,12 @@
 package de.jangerber.videoanalysis;
 
 
+import de.jangerber.videoanalysis.config.FileStorageProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.h2.tools.Server;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
 import javax.annotation.PostConstruct;
@@ -15,6 +17,9 @@ import java.util.TimeZone;
 
 @SpringBootApplication
 @Slf4j
+@EnableConfigurationProperties({
+        FileStorageProperties.class
+})
 public class VideoAnalysisApplication {
 
     public static void main(String[] args) {
