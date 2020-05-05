@@ -25,7 +25,8 @@ public class VideoController {
 
     @RequestMapping(value = "/upload/video",
             method = RequestMethod.POST,
-            consumes = {MediaType.MULTIPART_FORM_DATA_VALUE, MediaType.MULTIPART_MIXED_VALUE})
+            consumes = {MediaType.MULTIPART_FORM_DATA_VALUE,
+                    MediaType.MULTIPART_MIXED_VALUE})
     public Video uploadFilePost(@RequestParam("file") MultipartFile file,
                                 @RequestPart VideoCreateDTO metadata) {
         log.info("Start upload File");
