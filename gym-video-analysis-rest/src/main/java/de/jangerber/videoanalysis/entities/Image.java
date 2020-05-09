@@ -9,12 +9,32 @@ import javax.persistence.Id;
 import java.util.UUID;
 
 @Entity
-public class Picture {
+public class Image {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Type(type = "uuid-char")
     UUID id;
+    @Type(type = "uuid-char")
+    UUID groupId;
+    @Type(type = "uuid-char")
+    UUID idRaspi;
+
+    public UUID getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(UUID groupId) {
+        this.groupId = groupId;
+    }
+
+    public UUID getIdRaspi() {
+        return idRaspi;
+    }
+
+    public void setIdRaspi(UUID raspiId) {
+        this.idRaspi = raspiId;
+    }
 
     public UUID getId() {
         return id;

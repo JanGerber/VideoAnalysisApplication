@@ -9,6 +9,15 @@ public class VideoCreateDTO {
     int duration;
     DateTime startTime;
     String videoFormat;
+    UUID idRaspi;
+
+    public UUID getIdRaspi() {
+        return idRaspi;
+    }
+
+    public void setIdRaspi(UUID idRaspi) {
+        this.idRaspi = idRaspi;
+    }
 
     public String getVideoFormat() {
         return videoFormat;
