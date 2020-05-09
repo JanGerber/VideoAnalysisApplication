@@ -31,7 +31,7 @@ public class VideoController {
                                 @RequestPart VideoCreateDTO metadata) {
         log.info("Start upload File");
 
-        UUID uuidFile = fileStorageService.storeFile(file, "video/" + metadata.getGroupId() + "/", ".h264");
+        UUID uuidFile = fileStorageService.storeFile(file, "video/" + metadata.getGroupId() + "/", "." + metadata.getVideoFormat());
 
         return videoService.createVideo(metadata, uuidFile);
     }

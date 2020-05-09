@@ -8,6 +8,15 @@ public class VideoCreateDTO {
     UUID groupId;
     int duration;
     DateTime startTime;
+    String videoFormat;
+
+    public String getVideoFormat() {
+        return videoFormat;
+    }
+
+    public void setVideoFormat(String videoFormat) {
+        this.videoFormat = videoFormat;
+    }
 
     public int getDuration() {
         return duration;
