@@ -26,6 +26,10 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
     link: '/video',
     name: 'Videos',
     icon: 'ondemand_video'
+  }, {
+    link: '/iamges',
+    name: 'Images',
+    icon: 'image'
   }
   ];
 
