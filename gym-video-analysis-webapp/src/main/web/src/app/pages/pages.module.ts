@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {DeviceEditComponent} from './device-edit/device-edit.component';
+import {DeviceEditComponent} from './device/device-edit/device-edit.component';
 
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
@@ -12,7 +12,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
-import {DevicesComponent} from './devices/devices.component';
+import {DevicesComponent} from './device/devices/devices.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {PipeModule} from '../pipes/pipe.module';
 import {MatDatepickerModule} from '@angular/material/datepicker';

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {DeviceApiService} from '../../services/device-api.service';
-import {Device} from '../../models/device';
+import {DeviceApiService} from '../../../services/device-api.service';
+import {Device} from '../../../models/device';
 
 @Component({
   selector: 'app-device-edit',

@@ -14,11 +14,11 @@ public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Type(type = "uuid-char")
-    UUID id;
+    private UUID id;
     @Type(type = "uuid-char")
-    UUID groupId;
+    private UUID groupId;
     @Type(type = "uuid-char")
-    UUID idRaspi;
+    private UUID idRaspi;
 
     public UUID getGroupId() {
         return groupId;

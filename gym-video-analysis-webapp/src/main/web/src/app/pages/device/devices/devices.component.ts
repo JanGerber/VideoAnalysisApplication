@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Device} from '../../models/device';
-import {DeviceApiService} from '../../services/device-api.service';
+import {Device} from '../../../models/device';
+import {DeviceApiService} from '../../../services/device-api.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({

@@ -4,7 +4,7 @@ import de.jangerber.videoanalysis.entities.Device;
 import de.jangerber.videoanalysis.transfer.DeviceDTO;
 
 public interface DeviceMapper {
-    DeviceDTO entitiyToDto(Device cleaningSchedule);
+    DeviceDTO entityToDto(Device cleaningSchedule);
 
-    Device dtoToEntitiy(DeviceDTO coachDTO);
+    Device dtoToEntity(DeviceDTO coachDTO);
 }

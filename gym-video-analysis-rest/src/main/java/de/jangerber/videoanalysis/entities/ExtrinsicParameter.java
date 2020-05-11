@@ -8,8 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.UUID;
 
+
 @Entity
-public class IntrinsicParameters {
+public class ExtrinsicParameter {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
