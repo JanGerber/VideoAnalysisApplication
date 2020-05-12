@@ -57,6 +57,6 @@ export class DeviceEditComponent implements OnInit {
 
 
   private navigateBack() {
-    this.router.navigate(['/devices']);
+    this.router.navigate([`/device/${this.device.id}`]);
   }
 }

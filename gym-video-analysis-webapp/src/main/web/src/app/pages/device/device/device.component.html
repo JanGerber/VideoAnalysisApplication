@@ -1,0 +1,190 @@
+<div class="row row-custom">
+  <div class="col-12">
+    <div class="card-deck">
+
+      <div class="card">
+        <div class="card-header">
+          Device information
+        </div>
+        <div [class.spinner-background]="loadingStates.device"
+             [class.spinner]="loadingStates.device"
+             class="card-body">
+          <form class="example-form">
+            <div class="row">
+              <div class="col-12">
+                <mat-form-field>
+                  <mat-label>Device name</mat-label>
+                  <input [(ngModel)]="device.name"
+                         [readonly]="true"
+                         matInput
+                         name="deviceName"
+                         type="text">
+                </mat-form-field>
+              </div>
+              <div class="col-12">
+                <mat-form-field>
+                  <mat-label>Ip address</mat-label>
+                  <input [(ngModel)]="device.ipAddress"
+                         [readonly]="true"
+                         matInput
+                         name="deviceIp"
+                         type="text">
+                </mat-form-field>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer">
+          <button (click)="editDevice()" color="primary" mat-flat-button>edit</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          Videostream
+        </div>
+        <div [class.spinner-background]="loadingStates.videoStream"
+             [class.spinner]="loadingStates.videoStream"
+             class="card-body">
+          <img *ngIf="!loadingStates.device" [src]="'http://' + device.ipAddress + ':8090/video_feed' ">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row row-custom">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        Settings Rasperry Pi
+      </div>
+      <div [class.spinner-background]="loadingStates.settings"
+           [class.spinner]="loadingStates.settings"
+           class="card-body">
+        <form class="example-form">
+          <div class="row">
+            <div class="col-12">
+              <section>
+                <mat-label>Camera led</mat-label>
+                <br>
+                <mat-slide-toggle
+                  [checked]="true"
+                  class="example-margin">
+                </mat-slide-toggle>
+              </section>
+            </div>
+            <div class="col-12">
+              <mat-form-field>
+                <mat-label>Camera resolution width</mat-label>
+                <input [(ngModel)]="device.ipAddress"
+                       [readonly]="true"
+                       matInput
+                       name="resolutionWidth"
+                       type="text">
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <mat-form-field>
+                <mat-label>Camera resolution height</mat-label>
+                <input [(ngModel)]="device.ipAddress"
+                       [readonly]="true"
+                       matInput
+                       name="resolutionHeight"
+                       type="text">
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <mat-form-field>
+                <mat-label>Video filename</mat-label>
+                <input [(ngModel)]="device.ipAddress"
+                       [readonly]="true"
+                       matInput
+                       name="videoFilename"
+                       type="text">
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <mat-form-field>
+                <mat-label>Video format</mat-label>
+                <input [(ngModel)]="device.ipAddress"
+                       [readonly]="true"
+                       matInput
+                       name="videoFormat"
+                       type="text">
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <mat-form-field>
+                <mat-label>Image filename prefix</mat-label>
+                <input [(ngModel)]="device.ipAddress"
+                       [readonly]="true"
+                       matInput
+                       name="imageFilename"
+                       type="text">
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <mat-form-field>
+                <mat-label>Image format</mat-label>
+                <input [(ngModel)]="device.ipAddress"
+                       [readonly]="true"
+                       matInput
+                       name="imageFormat"
+                       type="text">
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <mat-form-field>
+                <mat-label>Url video upload</mat-label>
+                <input [(ngModel)]="device.ipAddress"
+                       [readonly]="true"
+                       matInput
+                       name="urlVideoUpload"
+                       type="text">
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <mat-form-field>
+                <mat-label>Url image upload</mat-label>
+                <input [(ngModel)]="device.ipAddress"
+                       [readonly]="true"
+                       matInput
+                       name="urlImageUpload"
+                       type="text">
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <mat-form-field>
+                <mat-label>Url login</mat-label>
+                <input [(ngModel)]="device.ipAddress"
+                       [readonly]="true"
+                       matInput
+                       name="urlLogin"
+                       type="text">
+              </mat-form-field>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button (click)="editDevice()" color="primary" mat-flat-button>edit</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row row-custom">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        Intrinsic Parameters
+      </div>
+      <div [class.spinner-background]="loadingStates.settings"
+           [class.spinner]="loadingStates.settings"
+           class="card-body">
+
+      </div>
+      <div class="card-footer">
+        <button (click)="editDevice()" color="primary" mat-flat-button>calibrate camera</button>
+      </div>
+    </div>
+  </div>
+</div>

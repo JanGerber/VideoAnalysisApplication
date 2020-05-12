@@ -30,6 +30,7 @@
                     <mat-icon color="primary">add_circle_outline</mat-icon>
                   </button>
                 </th>
+                <th scope="col"></th>
               </tr>
               </thead>
               <tbody>
@@ -42,8 +43,13 @@
                 <td>{{item.name}}</td>
                 <td>{{item.ipAddress}}</td>
                 <td>
-                  <a class="edit-action" routerLink="/device/{{item.id}}">
+                  <a class="edit-action" routerLink="/device/{{item.id}}/edit">
                     <mat-icon fontIcon="fa-edit" fontSet="far"></mat-icon>
+                  </a>
+                </td>
+                <td>
+                  <a class="edit-action" routerLink="/device/{{item.id}}">
+                    <mat-icon color="primary">linked_camera</mat-icon>
                   </a>
                 </td>
               </tr>

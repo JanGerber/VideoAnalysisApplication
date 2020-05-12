@@ -5,6 +5,7 @@ import {LoginComponent} from './login/login.component';
 import {AuthGuardService as AuthGuard} from './services/auth-guard.service';
 import {DevicesComponent} from './pages/device/devices/devices.component';
 import {ImpressumComponent} from './impressum/impressum.component';
+import {DeviceComponent} from './pages/device/device/device.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
   },
   {
     path: 'device/:deviceId',
+    component: DeviceComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'device/:deviceId/edit',
     component: DeviceEditComponent,
     canActivate: [AuthGuard]
   },
