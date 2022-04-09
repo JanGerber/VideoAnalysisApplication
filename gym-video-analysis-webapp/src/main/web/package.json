@@ -27,7 +27,7 @@
     "@fortawesome/fontawesome-free": "^5.13.0",
     "bootstrap": "^4.4.1",
     "jwt-decode": "^2.2.0",
-    "moment": "^2.25.3",
+    "moment": "^2.29.2",
     "rxjs": "^6.5.5",
     "tslib": "^1.11.2",
     "zone.js": "^0.10.3",
